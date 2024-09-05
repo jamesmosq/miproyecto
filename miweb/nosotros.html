@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - IE José Antonio Galán</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>IE José Antonio Galán</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="en-contruccion.html">Contratanos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Sobre Nosotros</h2>
+
+    <section id="historia">
+        <h3>Nuestra Historia</h3>
+        <p>Fundada en 1820, IE José Antonio Galán ha sido pionera en la educación. Desde nuestros humildes inicios, hemos crecido para convertirnos en [descripción breve de la posición actual].</p>
+    </section>
+
+    <section id="mision-vision">
+        <h3>Misión y Visión</h3>
+        <h4>Misión</h4>
+        <p>Nuestra misión es [declaración de la misión].</p>
+        <h4>Visión</h4>
+        <p>Aspiramos a [declaración de la visión].</p>
+    </section>
+
+    <section id="valores">
+        <h3>Nuestros Valores</h3>
+        <ul>
+            <li>Integridad</li>
+            <li>Innovación</li>
+            <li>Compromiso con el cliente</li>
+            <li>Responsabilidad social</li>
+        </ul>
+    </section>
+
+    <section id="equipo">
+        <h3>Nuestro Equipo</h3>
+        <p>Contamos con un equipo diverso y altamente calificado de profesionales dedicados a la educación de calidad.</p>
+
+        <div class="slider-container">
+            <div class="slider">
+                <img src="img/equipo/equipo1.png" alt="Miembro del equipo 1">
+                <img src="img/equipo/equipo2.png" alt="Miembro del equipo 2">
+                <img src="img/equipo/equipo3.png" alt="Miembro del equipo 3">
+                <img src="img/equipo/equipo4.png" alt="Miembro del equipo 4">
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="logros">
+        <h3>Logros y Reconocimientos</h3>
+        <ul>
+            <li>[Logro o reconocimiento 1]</li>
+            <li>[Logro o reconocimiento 2]</li>
+            <li>[Logro o reconocimiento 3]</li>
+            <li>[Logro o reconocimiento 3]</li>
+            <li>[Logro o reconocimiento 3]</li>
+            <li>[Logro o reconocimiento 3]</li>
+        </ul>
+    </section>
+</main>
+
+
+<footer>
+    <p>&copy; 2024 IE José Antonio Galán. Todos los derechos reservados.</p>
+</footer>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider img');
+
+    function showSlide(n) {
+        currentSlide = (n + slides.length) % slides.length;
+        const offset = -currentSlide * 100;
+        document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+    }
+
+    function changeSlide(n) {
+        showSlide(currentSlide + n);
+    }
+
+    // Inicializar el slider
+    showSlide(0);
+</script>
+</body>
+</html>
